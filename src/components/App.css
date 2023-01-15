@@ -1,0 +1,195 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  background-color: #282c34;
+}
+
+.switch {
+  display: flex;
+  align-items: center;
+  color: #f4f3f3;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'display';
+  src: local('display'),
+  url("../fonts/display.ttf") format("truetype")
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.switchInput {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.switchLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  background: grey;
+  border-radius: 100px;
+  position: relative;
+  transition: background-color .2s;
+}
+
+.switchLabel .switchButton {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 45px;
+  height: 45px;
+  border-radius: 45px;
+  transition: 0.2s;
+  background: #fff;
+  box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+}
+
+.switchInput:checked + .switchLabel .switchButton {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+
+.switchLabel:active .switchButton {
+  width: 60px;
+}
+
+.switch p{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas: "display display display display display"
+                       "backspace leftBr rightBr mod pi"
+                       "seven eight nine div sqrRoot"
+                       "four five six mult sqr"
+                       "one two three min res"
+                       "zero dec perc add res";
+  min-height: fit-content;
+  min-width: 30vw;
+  max-height:max-content;
+  border: 8px solid black;
+  border-radius: 20px;
+  background-color: lightgrey;
+}
+
+.switchInput {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.switchLabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 100px;
+  height: 50px;
+  background: grey;
+  border-radius: 100px;
+  position: relative;
+  transition: background-color .2s;
+}
+
+.switchLabel .switchButton {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 45px;
+  height: 45px;
+  border-radius: 45px;
+  transition: 0.2s;
+  background: #fff;
+  box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+}
+
+.switchInput:checked + .switchLabel .switchButton {
+  left: calc(100% - 2px);
+  transform: translateX(-100%);
+}
+
+.switchLabel:active .switchButton {
+  width: 60px;
+}
+
+#display {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  align-items: center;
+  justify-content: right;
+  font-family: 'display';
+  border: 4px solid black;
+  margin: 5px;
+  max-width: 100%;
+  grid-area: display;
+  border-radius: 10px;
+  min-height: 60px;
+  background-color: rgba(72, 168, 109, 0.671);
+  font-size: 2rem;
+  /* min-height: 60px; */
+}
+
+#display p{
+  background: none;
+}
+
+.superscript {
+  vertical-align: super;
+  font-size:0.5em
+}
+
+button {
+  display: flex;
+  overflow:scroll;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+  margin: 3px;
+  padding: 5px;
+  max-width: 100%;
+  min-width: 20%;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  background-color: whitesmoke;
+  font-weight: bold;
+}
+
+#backspace {
+  grid-area: backspace; 
+}
+
+#mod {
+  grid-area: mod;
+  font-size: 1.5em
+}
+
+#resolve {
+  grid-area: res;
+  background-color: rgba(255, 123, 0, 0.582);
+}
+
+#resolve:hover {
+  background-color: rgba(255, 147, 47, 0.582);
+}
